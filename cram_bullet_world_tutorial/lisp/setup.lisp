@@ -31,6 +31,14 @@
 
 ;; roslaunch cram_bullet_world_tutorial bullet_world.launch
 
+(defun kit ()
+  (slot-value (btr:object btr:*current-bullet-world* 'my-kitchen) 'cram-bullet-reasoning::urdf))
+
+(defun move-kitchen-joint (&key (joint-name "iai_fridge_door_joint") (joint-angle 0.2d0))
+  (btr:set-robot-state-from-joints
+   `((,joint-name  ,joint-angle))
+   (btr:object btr:*current-bullet-world* 'my-kitchen)))
+
 (defun init-projection ()
   (def-fact-group costmap-metadata ()
     (<- (location-costmap:costmap-size 12 12))
@@ -47,7 +55,7 @@
 
   (sem-map:get-semantic-map)
 
-  (cram-occasions-events:clear-belief)
+  ;; (cram-occasions-events:clear-belief)
 
   (setf cram-tf:*tf-default-timeout* 2.0)
 
