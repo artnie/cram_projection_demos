@@ -34,10 +34,10 @@
 (defun kit ()
   (slot-value (btr:object btr:*current-bullet-world* 'my-kitchen) 'cram-bullet-reasoning::urdf))
 
-(defun move-kitchen-joint (&key (joint-name "iai_fridge_door_joint") (joint-angle 0.2d0))
+(defun move-kitchen-joint (&key (joint-name "iai_fridge_door_joint") (joint-angle 0.2d0) (kitchen-name 'my-kitchen))
   (btr:set-robot-state-from-joints
    `((,joint-name  ,joint-angle))
-   (btr:object btr:*current-bullet-world* 'my-kitchen)))
+   (btr:object btr:*current-bullet-world* kitchen-name)))
 
 (defun init-projection ()
   (def-fact-group costmap-metadata ()
