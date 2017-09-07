@@ -24,7 +24,7 @@
   <!-- <depend>cram_occupancy_grid_costmap</depend> -->
   <!-- <depend>cram_plan_library</depend> -->
   <!-- <depend>cram_bullet_reasoning_designators</depend> -->
-  <!-- <depend>cram_pr2_designators</depend> -->
+  <!-- <depend>cram_common_designators</depend> -->
   <!-- <depend>cram_semantic_map_designators</depend> -->
   <!-- <depend>alexandria</depend> -->
   <!-- <depend>cram_bullet_reasoning_utilities</depend> -->
@@ -33,8 +33,9 @@
   <!-- launch file -->
   <exec_depend>iai_maps</exec_depend>
   <exec_depend>iai_kitchen</exec_depend>
-  <exec_depend>robot_state_chain_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>json_prolog</exec_depend>
   <exec_depend>pr2_description</exec_depend>
   <exec_depend>pr2_arm_kinematics</exec_depend>
+  <exec_depend>map_server</exec_depend>
 </package>

@@ -46,7 +46,7 @@
                cram-occupancy-grid-costmap
                cram-plan-library
                cram-bullet-reasoning-designators
-               cram-pr2-designators
+               cram-common-designators
                cram-semantic-map-designators
                alexandria
                cram-bullet-reasoning-utilities
@@ -58,6 +58,6 @@
      (:file "setup" :depends-on ("package"))
      (:file "restricted-area-costmap" :depends-on ("package"))
      (:file "scenario-interface" :depends-on ("package"))
-     (:file "table-setting" :depends-on ("package" "scenario-interface"))
-     (:file "pancake-making" :depends-on ("package"))
-     (:file "pick-and-place" :depends-on ("package"))))))
+     (:file "table-setting" :depends-on ("package" "scenario-interface" "setup"))
+     (:file "pancake-making" :depends-on ("package" "setup"))
+     (:file "pick-and-place" :depends-on ("package" "setup"))))))
